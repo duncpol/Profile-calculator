@@ -136,8 +136,10 @@ def calculate_2nd_mom_of_area(data, pixel_area, cog, pixel_length):
     for y_coord, row in enumerate(data):
         for x_coord, pixel in enumerate(row):
             if not pixel:
-                moa2_x += pixel_area * ((y_coord - cog[1]) * pixel_length + pixel_length / 2) ** 2
-                moa2_y += pixel_area * ((x_coord - cog[0]) * pixel_length + pixel_length / 2) ** 2
+                moa2_x += (1/12) * pixel_area ** 2 + pixel_area * \
+                          ((y_coord - cog[1]) * pixel_length + pixel_length / 2) ** 2
+                moa2_y += (1/12) * pixel_area ** 2 + pixel_area * \
+                          ((x_coord - cog[0]) * pixel_length + pixel_length / 2) ** 2
 
     moa2_tuple = (moa2_x, moa2_y)
     return moa2_tuple
