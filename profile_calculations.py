@@ -105,7 +105,7 @@ def add_cog_mark(data, cog):
         cross_x = int(data.shape[1] / 15)
     else:
         cross_x = 2
-    if data.shape[1] > 45:
+    if data.shape[0] > 45:
         cross_y = int(data.shape[0] / 15)
     else:
         cross_y = 2
